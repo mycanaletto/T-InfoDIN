@@ -65,6 +65,15 @@ text_sensor:
       name: "SSID"
     bssid:
       name: "BSSID"  
+  - platform: teleinfo
+    tag_name: "OPTARIF"
+    name: "Linky Tarif"
+    icon: mdi:handshake
+    
+  - platform: teleinfo
+    tag_name: "PTEC"
+    name: "Linky Tarif en cours"
+    icon: mdi:clock-time-nine-outline
 
 # Status Binary Sensor: https://esphome.io/components/binary_sensor/status.html
 binary_sensor:
@@ -175,3 +184,27 @@ sensor:
     state_class: measurement
     device_class: power
     icon: mdi:gauge
+    
+# Avertissement de Dépassement De Puissance Souscrite
+  - platform: teleinfo
+    tag_name: "ADPS"
+    name: "Linky Intensité Instantanée Dépassement"
+    unit_of_measurement: A
+    device_class: current
+    state_class: measurement
+    icon: mdi:current-ac
+
+# Intensité maximale appelée
+  - platform: teleinfo
+    tag_name: "IMAX"
+    name: "Linky Intensité Maximale"
+    unit_of_measurement: A
+    device_class: current
+    state_class: measurement
+    icon: mdi:current-ac
+
+  - platform: teleinfo
+    tag_name: "ADCO"
+    name: "Linky Address"
+    unit_of_measurement: ""
+    icon: mdi:eye
